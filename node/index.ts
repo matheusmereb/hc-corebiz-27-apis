@@ -8,6 +8,7 @@ import {
 } from '@vtex/api'
 
 import { Clients } from './clients'
+
 import { someStates } from './middlewares/someStates'
 
 const TIMEOUT_MS = 2000
