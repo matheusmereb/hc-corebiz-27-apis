@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "5c29d46b-bd22-4929-a15d-6a2fd4cd5cf3",
+		"name": "Doc API - Leads Hiring Coders",
+		"description": "# Apresentação\n\nDocumentação para utilização da Doc API - Leads Hiring Coders\n\n# Autenticação\n\nNão é preciso utilizar autenticação para fazer requisições a esta API.\n\n# Error Codes\n\n**400 – Bad Request**\n\nDados enviados de forma incorreta ou fora do padrão\n\n**403 – Forbidden**\n\nSem autorização suficiente para acessar o recurso desejado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Listar Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://2rfmtwqnye.execute-api.us-east-1.amazonaws.com/clientes",
+							"protocol": "https",
+							"host": [
+								"2rfmtwqnye",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"clientes"
+							]
+						},
+						"description": "Listar todos os clientes cadastrados."
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clientes By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://2rfmtwqnye.execute-api.us-east-1.amazonaws.com/clientes/:{email}",
+							"protocol": "https",
+							"host": [
+								"2rfmtwqnye",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"clientes",
+								":{email}"
+							],
+							"variable": [
+								{
+									"key": "{email}",
+									"value": "willamys@gmail.com"
+								}
+							]
+						},
+						"description": "Lista o cliente tendo como chave o email."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Clientes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://2rfmtwqnye.execute-api.us-east-1.amazonaws.com/clientes/:{email}",
+							"protocol": "https",
+							"host": [
+								"2rfmtwqnye",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"clientes",
+								":{email}"
+							],
+							"variable": [
+								{
+									"key": "{email}",
+									"value": "willamys@gmail.com"
+								}
+							]
+						},
+						"description": "Permiti realizar a deleção de um cliente ao passar o email como paramêtro."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Clientes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://2rfmtwqnye.execute-api.us-east-1.amazonaws.com/clientes/:{email}",
+							"protocol": "https",
+							"host": [
+								"2rfmtwqnye",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"clientes",
+								":{email}"
+							],
+							"variable": [
+								{
+									"key": "{email}",
+									"value": "willamys@gmail.com"
+								}
+							]
+						},
+						"description": "Permite a atualização de um cliente prospecto para cliente. É necessário passar somente o email como parâmetro."
+					},
+					"response": []
+				},
+				{
+					"name": "Add Clientes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"TableName\": \"clientes\",\r\n    \"Item\": {\r\n        \"clienteId\":\"1\",\r\n        \"email\": \"carla@gmail.com\",\r\n        \"nome\":\"Carla'\",\r\n        \"telefone\": \"+551111111\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://2rfmtwqnye.execute-api.us-east-1.amazonaws.com/clientes",
+							"protocol": "https",
+							"host": [
+								"2rfmtwqnye",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"clientes"
+							]
+						},
+						"description": "Adicionar um cliente."
+					},
+					"response": []
+				}
+			],
+			"description": "Está pasta representa um objeto do tipo Cliente na Doc Api – Leads Hiring Coders."
+		}
+	]
+}
