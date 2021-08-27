@@ -29,7 +29,7 @@ Identifica o cadastro de um cliente na base externa via API e se o cliente exist
 - [Orders Feed Example](https://github.com/vtex-apps/orders-feed-example)
 - [Client network socket disconnected error](https://github.com/vtex-apps/store-discussion/issues/377)
 - [Configurações Manifest.json](https://developers.vtex.com/vtex-developer-docs/docs/vtex-io-documentation-manifest#settingsschema)
-- [Exemplo de sittings shcema "Parametrizar o app" (Configurações Manifest.json)](https://github.com/vtex-apps/carrier-hubs-examples/blob/main/carrier-notifier-example/manifest.json)
+- [Exemplo de settings shcema "Parametrizar o app" (Configurações Manifest.json)](https://github.com/vtex-apps/carrier-hubs-examples/blob/main/carrier-notifier-example/manifest.json)
 
 # Colaboradores ✨
 <table>
