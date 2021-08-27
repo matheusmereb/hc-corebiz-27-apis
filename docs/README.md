@@ -1,62 +1,48 @@
-# Orders Feed Example
+# Integraçao API AWS
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-A boilerplate app implementing an event handler receiving status updates from OMS Feed.
-This is the method for using [Feed v3 Hook](https://developers.vtex.com/reference/feed-v3) inside VTEX IO.
+## O que isto faz?
 
-## How to Use
+Identifica o cadastro de um cliente na base externa via API e se o cliente existir, realiza a alteração no parâmetro tipo para `prospect`.
 
-This app handles events sent by the app `vtex.orders-broadcast`, as you can see by looking at `node/service.json`.
+1. Evento é disparado quando o pedido informado através do `vtex.orders-broadcast` se encontra com status `order-created`
+2. Consulta o pedido através do `orderId` para captura do e-mail utilizando API VTEX
+3. Valida o email cliente através de api externa utilizando `ExternalClient`
+4. Se existir o cadastro é comunicado a alteração do parâmetro tipo para `prospect`
 
-```json
-{
-  "memory": 256,
-  "ttl": 10,
-  "timeout": 2,
-  "minReplicas": 2,
-  "maxReplicas": 4,
-  "workers": 1,
-  "events": {
-    "allStates": {
-      "sender": "vtex.orders-broadcast",
-      "topics": ["order-status-updated"]
-    },
-    "someStates": {
-      "sender": "vtex.orders-broadcast",
-      "topics": ["cancel", "order-created"]
-    }
-  }
-}
-```
+## Dependências
+- AWS API Externa
+  
+## Estrutura de Componentes VTEX IO 
+- [API manipulador de evento (node)](#)
+- [Estrutura de dados (GraphQL)](#aplicarURL)
+- [Admin (React)](https://github.com/willamys/wgfa7-admin-vtex-io)
+- [Doc API AWS - Leads Hiring Coders](/docs/Doc%20API%20-%20Leads%20Hiring%20Coders.postman_collection.json)
 
-You have two ways of consuming changes in status:
+## Links úteis
+- [Using and creating clients](https://developers.vtex.com/vtex-developer-docs/docs/how-to-use-and-create-clients-on-vtex-io)
+- [Events Example](https://github.com/vtex-apps/events-example/)
+- [VTEX IO API Client for Node](https://github.com/vtex/node-vtex-api)
+- [Receiving Order Notifications](https://developers.vtex.com/vtex-developer-docs/docs/how-to-receive-order-notifications-on-vtex-io)
+- [Orders Feed Example](https://github.com/vtex-apps/orders-feed-example)
+- [Client network socket disconnected error](https://github.com/vtex-apps/store-discussion/issues/377)
+- [Configurações Manifest.json](https://developers.vtex.com/vtex-developer-docs/docs/vtex-io-documentation-manifest#settingsschema)
+- [Exemplo de settings shcema "Parametrizar o app" (Configurações Manifest.json)](https://github.com/vtex-apps/carrier-hubs-examples/blob/main/carrier-notifier-example/manifest.json)
 
-1. Receive all events subscribing to the `order-status-updated` topic, as the `allStates` handler does
-2. Receive a selection of status changes where the `currentState` equals the `topic`, as the `someStates` handler does. This option is the preferred one, when you know ahead of time, what types of events, you want to listen to.
-
-Normally `vtex.orders-broadcast` sends events only in `master` workspace. If you want to use it in a developer workspace, do the following:
-
-1. Create your development workspace by running `vtex use {workspaceName}`
-2. Go to `https://{accountName}.myvtex.com/admin/apps/vtex.orders-broadcast/setup`
-3. Change the `Target Workspace` variable to the name of the workspace you have created previously.
-4. Now you can link this app (`vtex.orders-feed-example`) in your desired workspace and receive order status updates.
-
-Here is an example body that you can expect to receive:
-
-```json
-{
-  "recorder": {
-    "_record": {
-      "x-vtex-meta": {},
-      "x-vtex-meta-bucket": {}
-    }
-  },
-  "domain": "Marketplace",
-  "orderId": "v69305315atmc-01",
-  "currentState": "invoice",
-  "lastState": "payment-approved",
-  "currentChangeDate": "2020-07-13T20:25:13.2304508Z",
-  "lastChangeDate": "2020-07-13T20:25:03.9527532Z"
-}
-```
-
-If you want to understand further how Feed v3 works, check out [this documentation](https://help.vtex.com/tutorial/orders-management-feed-v3-setup--5qDml3cQypWDRTgw69s4C1).
+# Colaboradores ✨
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/brunotda"><img src="https://avatars0.githubusercontent.com/u/15007670?v=4" width="100px;" alt=""/><br /><sub><b>Bruno Araujo</b></sub></a></td>
+    <td align="center"><a href="https://github.com/brendoll"><img src="https://avatars0.githubusercontent.com/u/5557733?v=4" width="100px;" alt=""/><br /><sub><b>Hyago Brendoll</b></sub></a></td>
+    <td align="center"><a href="https://github.com/marim77"><img src="https://avatars0.githubusercontent.com/u/87247438?v=4" width="100px;" alt=""/><br /><sub><b>Mari Marques</b></sub></a></td>
+    <td align="center"><a href="https://github.com/matheusmereb"><img src="https://avatars0.githubusercontent.com/u/79163839?v=4" width="100px;" alt=""/><br /><sub><b>Matheus Mereb</b></sub></a></td>
+    <td align="center"><a href="https://github.com/melissareboucas"><img src="https://avatars0.githubusercontent.com/u/86539553?v=4" width="100px;" alt=""/><br /><sub><b>Melissa Viana</b></sub></a></td>
+     <td align="center"><a href="https://github.com/sergiofdf"><img src="https://avatars0.githubusercontent.com/u/84455399?v=4" width="100px;" alt=""/><br /><sub><b>Sérgio Filho</b></sub></a></td>
+    <td align="center"><a href="https://github.com/kyothiago"><img src="https://avatars0.githubusercontent.com/u/20112201?v=4" width="100px;" alt=""/><br /><sub><b>Thiago Almeida</b></sub></a></td>
+    <td align="center"><a href="https://github.com/vanzacher"><img src="https://avatars0.githubusercontent.com/u/60407938?v=4" width="100px;" alt=""/><br /><sub><b>Vanderlei Zacher</b></sub></a></td>
+    <td align="center"><a href="https://github.com/VanessaOrmonde"><img src="https://avatars0.githubusercontent.com/u/74844964?v=4" width="100px;" alt=""/><br /><sub><b>Vanessa Ormonde</b></sub></a></td>
+    <td align="center"><a href="https://github.com/willamys"><img src="https://avatars0.githubusercontent.com/u/1679148?v=4" width="100px;" alt=""/><br /><sub><b>Willamys Araújo</b></sub></a></td>
+  </tr>
+</table>

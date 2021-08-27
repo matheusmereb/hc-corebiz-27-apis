@@ -2,8 +2,8 @@
   "name": "orders-feed-example",
   "vendor": "vtex",
   "version": "0.2.1",
-  "title": "Orders Feed Example",
-  "description": "Boilerplate app for receving order status events",
+  "title": "Lead External API",
+  "description": "API para atualização de LEAD em api externa a partir do order status events",
   "categories": [],
   "dependencies": {},
   "builders": {
