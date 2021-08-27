@@ -19,7 +19,7 @@ Identifica o cadastro de um cliente na base externa via API e se o cliente exist
 - [API manipulador de evento (node)](#)
 - [Estrutura de dados (GraphQL)](#aplicarURL)
 - [Admin (React)](https://github.com/willamys/wgfa7-admin-vtex-io)
-
+- [Doc API AWS - Leads Hiring Coders](/docs/Doc%20API%20-%20Leads%20Hiring%20Coders.postman_collection.json)
 
 ## Links úteis
 - [Using and creating clients](https://developers.vtex.com/vtex-developer-docs/docs/how-to-use-and-create-clients-on-vtex-io)
