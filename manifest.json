@@ -1,7 +1,7 @@
 {
   "name": "orders-feed-example",
   "vendor": "vtex",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "title": "Lead External API",
   "description": "API para atualização de LEAD em api externa a partir do order status events",
   "categories": [],
