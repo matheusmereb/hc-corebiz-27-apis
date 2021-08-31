@@ -14,12 +14,12 @@ Identifica o cadastro de um cliente na base externa via API e se o cliente exist
 
 ## Dependências
 - AWS API Externa
-  
-## Estrutura de Componentes VTEX IO 
-- [API manipulador de evento (node)](#)
-- [Estrutura de dados (GraphQL)](#aplicarURL)
-- [Admin (React)](https://github.com/willamys/wgfa7-admin-vtex-io)
 - [Doc API AWS - Leads Hiring Coders](/docs/Doc%20API%20-%20Leads%20Hiring%20Coders.postman_collection.json)
+
+## Estrutura de Componentes VTEX IO 
+- [Tema da loja](https://github.com/matheusmereb/hc-corebiz-27)
+- [Integraçao API AWS (Serviços)](https://github.com/matheusmereb/hc-corebiz-27-apis)
+- [Admin e GraphQL](https://github.com/willamys/wgfa7-admin-vtex-io)
 
 ## Links úteis
 - [Using and creating clients](https://developers.vtex.com/vtex-developer-docs/docs/how-to-use-and-create-clients-on-vtex-io)
